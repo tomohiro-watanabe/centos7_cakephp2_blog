@@ -1,0 +1,4 @@
+[submodule "app/Plugin/Plugin/Upload"]
+	path = app/Plugin/Plugin/Upload
+	url = git://github.com/josegonzalez/cakephp-upload.git
+	branch = 2.x
