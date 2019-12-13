@@ -35,6 +35,7 @@
     </div>
 
     <div class="card-footer text-muted">
+    <ul style="list-style:none;"><li>
      <?php echo $this->Form->postLink(
                     'Delete',
                     array('action' => 'delete', $post['Post']['id']),
@@ -43,7 +44,9 @@
             <?php echo $this->Html->link(
                     'Edit', array('action' => 'edit', $post['Post']['id'])
                 );?>
+                </li></ul>
             <?php echo $post['Post']['modified']; ?>
+            
     </div>
 
 </div>
