@@ -28,6 +28,7 @@
         <?php endforeach; ?></p>
     <p>BODY: <?php echo $post['Post']['body']; ?></p>
     <p>Image: </p>
+<<<<<<< HEAD
     <p> 
     <?php $base = $this->Html->url('/files/image/photo/');
           $link = $base . $post['Image'][0]['photo_dir'] . '/' . $post['Image'][0]['photo'];
@@ -39,6 +40,12 @@
         ($base . $post['Image'][0]['photo_dir'] . '/' . 'thumb_' . $post['Image'][0]['photo'],
                 array('alt' => 'Image'),); ?>
     </a></p>
+=======
+    <p> <?php $base = $this->Html->url('/files/image/photo/');
+        echo $this->Html->image
+        ($base . $post['Image'][0]['photo_dir'] . '/' . 'thumb_' . $post['Image'][0]['photo'],
+                array('alt' => 'Image')); ?></p></p>
+>>>>>>> origin/master
     </div>
 
     <div class="card-footer text-muted">
@@ -77,9 +84,13 @@
 
             </div>
             </div>
+<<<<<<< HEAD
 
 <script src="webroot/js/lightbox.js" type="text/javascript"></script>
 </body>
+=======
+            </body>
+>>>>>>> origin/master
             
 
 <div class="card text-center">
