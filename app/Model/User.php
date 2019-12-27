@@ -4,6 +4,7 @@ App::uses('AppModel', 'Model');
 App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
 class User extends AppModel {
+<<<<<<< HEAD
 
     public $belongsTo = array(
         'Zipcode' => array(
@@ -12,6 +13,8 @@ class User extends AppModel {
         )
         );
 
+=======
+>>>>>>> origin/master
     public $validate = array(
         'username' => array(
             'required' => array(

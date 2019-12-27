@@ -1,6 +1,11 @@
 <!-- File: /app/View/Posts/index.ctp -->
 <?php echo $this->element('header')?>
+<<<<<<< HEAD
 <br></br>
+=======
+<br>
+</br>
+>>>>>>> origin/master
 
 <div class="container">
     <div class="row">
@@ -12,6 +17,10 @@
   <?php foreach ($posts as $post): ?>
 
 <div class="card text-left">
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     <div class="card-header">
     <?php echo $this->Html->link(
                     $post['Post']['title'],
@@ -25,6 +34,7 @@
         <?php echo $tag['tag']; ?>
         <?php endforeach; ?></p>
     <p>BODY: <?php echo $post['Post']['body']; ?></p>
+<<<<<<< HEAD
 
 
     <p>IMAGE: </p>
@@ -42,6 +52,21 @@
         <img id="popup-item" src=""/>
          </div>       
          
+=======
+    <p>Image: </p>
+
+    <p> 
+    <a href="files/image/photo/10/AME19716073_TP_V.jpg" data-lightbox="group">
+
+    
+    <?php $base = $this->Html->url('/files/image/photo/');
+        echo $this->Html->image
+        ($base . $post['Image'][0]['photo_dir'] . '/' . 'thumb_' . $post['Image'][0]['photo'],
+                array('alt' => 'Image')); ?></a></p>
+        
+    </div>
+
+>>>>>>> origin/master
     <div class="card-footer text-muted">
     <ul style="list-style:none;"><li>
      <?php echo $this->Form->postLink(
@@ -75,11 +100,19 @@
 <?php echo $this->element('searchForm')?>
 </div>
 </div>
+<<<<<<< HEAD
     </div>
     </div>
 
 
 
+=======
+
+            </div>
+            </div>
+
+<script src="webroot/js/lightbox.js" type="text/javascript"></script>
+>>>>>>> origin/master
 </body>
             
 

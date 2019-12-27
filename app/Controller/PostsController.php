@@ -8,7 +8,14 @@ class PostsController extends AppController {
     public $helpers = array('Html', 'Form');
     // 検索対象のフィールド設定  
     public $presetVars = true;
+<<<<<<< HEAD
     
+=======
+<<<<<<< HEAD
+    
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 
     public function index() {
         $this->autoLayout = false;
