@@ -2,12 +2,9 @@
 App::uses('AppController', 'Controller');
 
 class UsersController extends AppController {
-<<<<<<< HEAD
     public $name = 'Users';
     public $uses = array('User','Zipcode');
     public $helpers = array('Html', 'Form');
-=======
->>>>>>> origin/master
 
     public function beforeFilter() {
         parent::beforeFilter();
@@ -42,17 +39,11 @@ class UsersController extends AppController {
     }
 
     public function add() {
-<<<<<<< HEAD
-        // debug($this->User->find('all'));
-
+        debug($this->User->find('all'));
+        $this->autoLayout = false;
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->saveAll($this->request->data)) {
-=======
-        if ($this->request->is('post')) {
-            $this->User->create();
-            if ($this->User->save($this->request->data)) {
->>>>>>> origin/master
                 $this->Flash->success(__('The user has been saved'));
                 return $this->redirect(array('action' => 'login'));
             }
@@ -60,11 +51,9 @@ class UsersController extends AppController {
                 __('The user could not be saved. Please, try again.')
             );
         }
-<<<<<<< HEAD
+
             $this->set('zipcodes',$this->Zipcode->find('list',
             array('fields'=>array('id','city'))));
-=======
->>>>>>> origin/master
     }
 
     public function edit($id = null) {

@@ -1,26 +1,18 @@
 <!-- File: /app/View/Posts/index.ctp -->
 <?php echo $this->element('header')?>
-<<<<<<< HEAD
+
+
 <br></br>
-=======
-<br>
-</br>
->>>>>>> origin/master
 
 <div class="container">
     <div class="row">
         <div class="col-md-9">
 
 <h1>Blog Post</h1><br></br>
-
+<ul style="list-style: none;">
 <!-- ここで $posts 配列をループして、投稿情報を表示 -->
   <?php foreach ($posts as $post): ?>
-
 <div class="card text-left">
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
     <div class="card-header">
     <?php echo $this->Html->link(
                     $post['Post']['title'],
@@ -34,49 +26,24 @@
         <?php echo $tag['tag']; ?>
         <?php endforeach; ?></p>
     <p>BODY: <?php echo $post['Post']['body']; ?></p>
-<<<<<<< HEAD
-
-
     <p>IMAGE: </p>
     <?php $base = $this->Html->url('/files/image/photo/');
           $link = $base . $post['Image'][0]['photo_dir'] . '/' . 'thumb_' . $post['Image'][0]['photo'];
           $pop = $base . $post['Image'][0]['photo_dir'] . '/' . $post['Image'][0]['photo'];
           ?>
 
+        <li class="img">
         <a href="<?php echo $link?>" class="popupimg">
-          <?php echo $this->Html->image
-        ($link,
-                array('alt' => 'Image'));
-                ?></a>
+          <?php echo $this->Html->image($link, array('alt' => 'Image'));?></a>
         
-        <img id="popup-item" src=""/>
-         </div>       
-         
-=======
-    <p>Image: </p>
-<<<<<<< HEAD
-    <p> 
-    <?php $base = $this->Html->url('/files/image/photo/');
-          $link = $base . $post['Image'][0]['photo_dir'] . '/' . $post['Image'][0]['photo'];
-          ?>
+        <button class="slider-prev">prev</button> 
+        <img class="popup-item" src="<?php echo $pop?>" width=800 />
+        <button class="slider-next">next</button>
+        </li>
 
-    <a href=<?php echo $link; ?> data-lightbox="group">
-    <?php 
-        echo $this->Html->image
-        ($base . $post['Image'][0]['photo_dir'] . '/' . 'thumb_' . $post['Image'][0]['photo'],
-                array('alt' => 'Image'),); ?>
-    </a></p>
-=======
-    <p> <?php $base = $this->Html->url('/files/image/photo/');
-        echo $this->Html->image
-        ($base . $post['Image'][0]['photo_dir'] . '/' . 'thumb_' . $post['Image'][0]['photo'],
-                array('alt' => 'Image')); ?></p></p>
->>>>>>> origin/master
-    </div>
+</div>
 
->>>>>>> origin/master
     <div class="card-footer text-muted">
-    <ul style="list-style:none;"><li>
      <?php echo $this->Form->postLink(
                     'Delete',
                     array('action' => 'delete', $post['Post']['id']),
@@ -85,14 +52,15 @@
             <?php echo $this->Html->link(
                     'Edit', array('action' => 'edit', $post['Post']['id'])
                 );?>
-                </li></ul>
             <?php echo $post['Post']['modified']; ?>
-            
     </div>
 
 </div>
     <p></p>
 <?php endforeach; ?>
+</ul>
+
+
 
 
 <button type="button" class="btn btn-light rounded-pill"><?php echo $this->Paginator->prev('前へ' . __(''), array(), null, array('class' => 'prev disabled'));?></button>
@@ -108,25 +76,12 @@
 <?php echo $this->element('searchForm')?>
 </div>
 </div>
-<<<<<<< HEAD
     </div>
     </div>
 
 
 
 </body>
-=======
-
-            </div>
-            </div>
-<<<<<<< HEAD
-
-<script src="webroot/js/lightbox.js" type="text/javascript"></script>
-</body>
-=======
-            </body>
->>>>>>> origin/master
->>>>>>> origin/master
             
 
 <div class="card text-center">
