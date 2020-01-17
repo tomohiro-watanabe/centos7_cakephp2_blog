@@ -11,6 +11,10 @@ class UsersController extends AppController {
         $this->Auth->allow('add', 'logout');
     }
 
+    public function dbconnect() {
+        $this->autoLayout = false;
+    }
+
     public function login() {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
@@ -39,7 +43,7 @@ class UsersController extends AppController {
     }
 
     public function add() {
-        debug($this->User->find('all'));
+        // debug($this->User->find('all'));
         $this->autoLayout = false;
         if ($this->request->is('post')) {
             $this->User->create();
@@ -76,9 +80,6 @@ class UsersController extends AppController {
     }
 
     public function delete($id = null) {
-        // Prior to 2.5 use
-        // $this->request->onlyAllow('post');
-
         $this->request->onlyAllow('post');
 
         $this->User->id = $id;

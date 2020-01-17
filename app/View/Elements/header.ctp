@@ -3,6 +3,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -13,6 +14,16 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> -->
 
 <style type="text/css">
+ul.head{
+    display:table;
+    width:500px;
+}
+
+ul.head li{
+    display:table-cell;
+}
+
+
 #popup-background{
     display:none;
     position:fixed;     /* 位置の固定 */
@@ -53,8 +64,6 @@
     padding: 0;
     z-index:1002;
 }
-
-
 </style>
 
 <script>
@@ -111,40 +120,26 @@ $(function(){
   });
 });
 
-$(function(){ 
-    var zipcode = 0;
-    
-    $('#zipcode').focusout(function(){
-        var zipcode = $('#zipcode').val();
-        alert(zipcode);
-    });
-});
-
-
 </script>
 
 </head>
-
-
-
-
 
 <body>
 <div id="popup-background"></div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 <span class="navbar-text">
-        <?php echo $this->Html->link('Home',array('controller' => 'posts', 'action' => 'index')); ?>   
-        <?php echo $this->Html->link('Add Post',array('controller' => 'posts', 'action' => 'add')); ?>
-        <?php echo $this->Html->link('Log In', array('controller' => 'users', 'action' => 'login'));?>
-        <?php echo $this->Html->link('Add User', array('controller' => 'users', 'action' => 'add'));?>
-        <button id="search" type="button" class="btn btn-light rounded-pill">検索</button>
+<ul class = "head">
+<li><?php echo $this->Html->link('Home',array('controller' => 'posts', 'action' => 'index')); ?></li>   
+<li><?php echo $this->Html->link('Add Post',array('controller' => 'posts', 'action' => 'add')); ?></li>
+<li><?php echo $this->Html->link('Log In', array('controller' => 'users', 'action' => 'login'));?></li>
+<li><?php echo $this->Html->link('Add User', array('controller' => 'users', 'action' => 'add'));?></li>
+<li><button id="search" type="button" class="btn btn-light rounded-pill">検索</button></li>
 </span>
 </nav>
 
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
