@@ -2,7 +2,6 @@
 $zipcode = $_POST['zipcode'];
 
 // データベース接続
-
 $host = 'localhost';
 $dbname = 'blog';
 $dbuser = 'root';
@@ -15,18 +14,17 @@ $dbh = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8mb4", $dbuser,$d
  exit;
 }
 // データ取得
-$sql = "SELECT id, zipcode, city FROM zipcodes WHERE zipcode = ?";
+$sql = "SELECT zipcode, pref, city, street FROM zipcodes WHERE zipcode = ?";
 $stmt = ($dbh->prepare($sql));
 $stmt->execute(array($zipcode));
 
-
-//あらかじめ配列を生成しておき、while文で回します。
 $memberList = array();
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
  $memberList[]=array(
-  'id'=>$row['id'],
   'zipcode'=>$row['zipcode'],
-  'city'=>$row['city']
+  'pref'=>$row['pref'],
+  'city'=>$row['city'],
+  'street'=>$row['street']
  );
 }
 

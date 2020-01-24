@@ -14,6 +14,18 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> -->
 
 <style type="text/css">
+
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
 ul.head{
     display:table;
     width:500px;
@@ -67,7 +79,6 @@ ul.head li{
 </style>
 
 <script>
-
 $(function(){ 
     $('#popup-background').hide();
     $('.popup-item').hide();
@@ -125,6 +136,7 @@ $(function(){
 </head>
 
 <body>
+<!-- <div id="wrapper"> -->
 <div id="popup-background"></div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 <span class="navbar-text">
@@ -133,6 +145,7 @@ $(function(){
 <li><?php echo $this->Html->link('Add Post',array('controller' => 'posts', 'action' => 'add')); ?></li>
 <li><?php echo $this->Html->link('Log In', array('controller' => 'users', 'action' => 'login'));?></li>
 <li><?php echo $this->Html->link('Add User', array('controller' => 'users', 'action' => 'add'));?></li>
+<li><?php echo $this->Html->link('Csv Add', array('controller' => 'zipcodes', 'action' => 'index'));?></li>
 <li><button id="search" type="button" class="btn btn-light rounded-pill">検索</button></li>
 </span>
 </nav>

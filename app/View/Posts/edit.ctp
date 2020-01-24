@@ -1,4 +1,3 @@
-<?php echo $this->element('header')?>
 
 <h1>Edit Post</h1>
 <?php
@@ -13,4 +12,5 @@ echo $this->Form->input('Tag.id');
 echo $this->Form->input('body', array('rows' => '3'));
 echo $this->Form->end('Save Post');
 ?>
+
 

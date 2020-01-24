@@ -36,9 +36,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
+<div id="wrapper">
+<?php 
+echo $this->element('header')
+?>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'https://cakephp.org'); ?></h1>
+		
+			<!-- <h1><?php echo $this->Html->link($cakeDescription, 'https://cakephp.org'); ?></h1> -->
 		</div>
 		<div id="content">
 
@@ -46,7 +51,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
+		<!-- <div id="footer">
+		
 			<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
 					'https://cakephp.org/',
@@ -56,8 +62,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<p>
 				<?php echo $cakeVersion; ?>
 			</p>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+		</div> -->
+	<!-- </div>
+	<?php echo $this->element('sql_dump'); ?> -->
 </body>
+<footer>
+<?php echo $this->element('footer') ?>
+</footer>
+</div>
 </html>

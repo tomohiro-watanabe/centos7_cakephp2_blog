@@ -1,6 +1,5 @@
-//app/View/Users/login.ctp
-
-<div class="users form">
+<!-- //app/View/Users/login.ctp -->
+<!-- <div class="users form"> -->
 <?php echo $this->Flash->render('auth'); ?>
 <?php echo $this->Form->create('User'); ?>
     <fieldset>
@@ -11,6 +10,6 @@
         echo $this->Form->input('password');
     ?>
     </fieldset>
-<?php echo $this->Form->end(__('Login')); ?>
-</div>
-<?php echo $this->element('footer')?>
+<?php echo $this->Form->end(__('ログイン')); ?>
+<!-- </div> -->
+

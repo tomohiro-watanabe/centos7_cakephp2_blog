@@ -11,7 +11,6 @@ class PostsController extends AppController {
     
 
     public function index() {
-        $this->autoLayout = false;
         // debug($this->Post->find('all'));
         $this->Prg->commonProcess();
         $this->paginate = array(
@@ -34,7 +33,7 @@ class PostsController extends AppController {
 
     public function view($id = null) {
         // debug($this->Post->find('all'));
-        $this->autoLayout = false;
+       
 
         if (!$id) {
             throw new NotFoundException(__('Invalid post'));
@@ -50,7 +49,7 @@ class PostsController extends AppController {
 
     public function add() {
         // debug($this->Post->find('all'));
-        $this->autoLayout = false;
+       
 
         if ($this->request->is('post')) {
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
@@ -70,7 +69,7 @@ class PostsController extends AppController {
         }
 
     public function edit($id = null) {
-        $this->autoLayout = false;
+    
         if (!$id) {
             throw new NotFoundException(__('Invalid post'));
         }

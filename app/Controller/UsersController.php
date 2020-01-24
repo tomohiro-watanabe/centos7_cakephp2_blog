@@ -44,7 +44,6 @@ class UsersController extends AppController {
 
     public function add() {
         // debug($this->User->find('all'));
-        $this->autoLayout = false;
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->saveAll($this->request->data)) {
@@ -55,9 +54,6 @@ class UsersController extends AppController {
                 __('The user could not be saved. Please, try again.')
             );
         }
-
-            $this->set('zipcodes',$this->Zipcode->find('list',
-            array('fields'=>array('id','city'))));
     }
 
     public function edit($id = null) {
