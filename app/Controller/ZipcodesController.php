@@ -22,7 +22,7 @@ class ZipcodesController extends AppController{
 
 					if (move_uploaded_file($file_temp_name, $file)) {
 
-						chmod($file, 7777);
+						chmod($file, 0777);
 
 						//zipcodesテーブルの中にあるデータを一旦削除
 						$truncate  = "TRUNCATE TABLE zipcodes;";
