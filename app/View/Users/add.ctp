@@ -27,7 +27,10 @@ $(function(){
 $('#zipcode').on('change', function(){
     let val = $(this).val();
     // 半角数字以外を削除
-    val = val.replace(/[^\d]+/g, '');
+    val = val.replace(/[０-９]/g, function(val) {
+      return String.fromCharCode(val.charCodeAt(0) - 0xFEE0)
+    })
+    .replace(/[^\d]+/g, '');
     $(this).val( val );
   });
 
